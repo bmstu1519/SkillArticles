@@ -8,7 +8,7 @@ import ru.skillbranch.skillarticles.extensions.data.toAppSettings
 import ru.skillbranch.skillarticles.extensions.data.toArticlePersonalInfo
 import ru.skillbranch.skillarticles.extensions.format
 
-class ArticleViewModel(private val articleId : String) : BaseViewModel<ArticleState>(ArticleState()),IArticleViewModel {
+class ArticleViewModel(private val articleId : String) : BaseViewModel<ArticleState>(ArticleState()), IArticleViewModel {
 
     private val repository = ArticleRepository
 
@@ -73,12 +73,11 @@ class ArticleViewModel(private val articleId : String) : BaseViewModel<ArticleSt
         val message = if (currentState.isLike) Notify.TextMessage("Mark is liked")
         else {
             Notify.ActionMessage(
-                "Don't like it anymore",
+                "Don`t like it anymore",
                 "No, still like it",
                 toggleLike
             )
         }
-
         notify(message)
     }
 

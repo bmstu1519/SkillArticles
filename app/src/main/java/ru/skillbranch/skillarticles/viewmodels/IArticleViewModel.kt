@@ -26,7 +26,6 @@ interface IArticleViewModel {
      */
     fun handleNightMode()
 
-
     /**
      * Обработка нажатия на btn_text_up (увеличение шрифта текста)
      * необходимо увеличить шрифт до значения 18
@@ -70,7 +69,7 @@ interface IArticleViewModel {
 
     /**
      * обрабока перехода в режим поиска searchView
-     * при нажатии на пункту меню тулбара необходимо отобразить searchView и сохранить состояние при
+     * при нажатии на пункт меню тулбара необходимо отобразить searchView и сохранить состояние при
      * изменении конфигурации (пересоздании активити)
      */
     fun handleSearchMode(isSearch: Boolean)
@@ -81,3 +80,4 @@ interface IArticleViewModel {
      */
     fun handleSearch(query: String?)
 }
+
