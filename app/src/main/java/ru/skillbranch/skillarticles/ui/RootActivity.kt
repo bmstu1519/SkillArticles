@@ -44,7 +44,9 @@ class RootActivity : AppCompatActivity() {
         val snackbar = Snackbar.make(coordinator_container, notify.message, Snackbar.LENGTH_LONG)
             .setAnchorView(bottombar)
         when(notify){
-            is Notify.TextMessage -> {/*nothing*/}
+            is Notify.TextMessage -> {
+            /*nothing*/
+            }
 
             is Notify.ActionMessage -> {
                 snackbar.setActionTextColor(getColor(R.color.color_accent_dark))
@@ -107,7 +109,7 @@ class RootActivity : AppCompatActivity() {
 
         tv_text_content.text = if (data.isLoadingContent) "loading" else data.content.first() as String
 
-        toolbar.title = data.title ?: "loading"
+        toolbar.title = data.title ?: "Skill Articles"
         toolbar.subtitle = data.category ?: "loading"
 
         if (data.categoryIcon != null) toolbar.logo = getDrawable(data.categoryIcon as Int)
