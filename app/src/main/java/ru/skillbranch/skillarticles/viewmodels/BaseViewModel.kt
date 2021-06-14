@@ -1,9 +1,12 @@
 package ru.skillbranch.skillarticles.viewmodels
 
 import androidx.annotation.UiThread
+import androidx.annotation.VisibleForTesting
 import androidx.lifecycle.*
 
 abstract class BaseViewModel<T>(initState: T) : ViewModel()  {
+
+    @VisibleForTesting(otherwise = VisibleForTesting.PROTECTED)
     protected val notifications = MutableLiveData<Event<Notify>>()
 
     /***
@@ -11,6 +14,8 @@ abstract class BaseViewModel<T>(initState: T) : ViewModel()  {
      * MediatorLiveData - медиатор исспользуется для того чтобы учитывать изменяемые данные модели
      * и обновлять состояние ViewModel исходя из полученных данных
      */
+
+    @VisibleForTesting(otherwise = VisibleForTesting.PROTECTED)
     protected val state : MediatorLiveData<T> = MediatorLiveData<T>().apply {
         value = initState
     }
@@ -18,6 +23,8 @@ abstract class BaseViewModel<T>(initState: T) : ViewModel()  {
     /***
      * getter для получения not null значения текущего состояния ViewModel
      */
+
+    @VisibleForTesting(otherwise = VisibleForTesting.PROTECTED)
     protected val currentState
         get() = state.value!!
 
