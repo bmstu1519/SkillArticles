@@ -97,6 +97,7 @@ class Event<out E>(private val content:E){
             content
         }
     }
+    fun peekContent(): E = content
 }
 
 /***
