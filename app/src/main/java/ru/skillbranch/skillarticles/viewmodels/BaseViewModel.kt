@@ -7,7 +7,7 @@ import androidx.lifecycle.*
 abstract class BaseViewModel<T>(initState: T) : ViewModel()  {
 
     @VisibleForTesting(otherwise = VisibleForTesting.PROTECTED)
-    protected val notifications = MutableLiveData<Event<Notify>>()
+    val notifications = MutableLiveData<Event<Notify>>()
 
     /***
      * Инициализация начального состояния аргументом конструктоа, и объявления состояния как
@@ -16,7 +16,7 @@ abstract class BaseViewModel<T>(initState: T) : ViewModel()  {
      */
 
     @VisibleForTesting(otherwise = VisibleForTesting.PROTECTED)
-    protected val state : MediatorLiveData<T> = MediatorLiveData<T>().apply {
+    val state : MediatorLiveData<T> = MediatorLiveData<T>().apply {
         value = initState
     }
 
