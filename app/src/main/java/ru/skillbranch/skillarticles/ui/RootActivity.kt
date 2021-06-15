@@ -109,6 +109,7 @@ class RootActivity : AppCompatActivity() {
 
         tv_text_content.text = if (data.isLoadingContent) "loading" else data.content.first() as String
 
+
         toolbar.title = data.title ?: "Skill Articles"
         toolbar.subtitle = data.category ?: "loading"
 
